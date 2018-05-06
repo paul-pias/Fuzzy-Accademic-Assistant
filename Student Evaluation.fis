@@ -1,0 +1,64 @@
+[System]
+Name='Student Evaluation'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=18
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='attendence'
+Range=[0 24]
+NumMFs=3
+MF1='poor':'trimf',[0 5 11]
+MF2='moderate':'trimf',[12 14 17]
+MF3='good':'trimf',[15 20 24]
+
+[Input2]
+Name='teaching_methodology'
+Range=[0 10]
+NumMFs=3
+MF1='poor':'trimf',[0 2 3]
+MF2='good':'trimf',[4 5 7]
+MF3='best':'gaussmf',[1.0706562401472 10]
+
+[Input3]
+Name='online_resources'
+Range=[0 1]
+NumMFs=2
+MF1='not_helpfull':'trapmf',[0 0 0 0]
+MF2='helpfull':'trapmf',[1 1 1 1]
+
+[Output1]
+Name='cgpa'
+Range=[0 4]
+NumMFs=4
+MF1='poor':'trimf',[0 1.5 1.75]
+MF2='Average':'trimf',[2.01 2.5 2.75]
+MF3='Moderate':'trimf',[2.75 3 3.5]
+MF4='Best':'trimf',[3.5 3.75 4]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 2 (1) : 1
+1 2 1, 2 (1) : 1
+1 2 2, 2 (1) : 1
+1 3 1, 1 (1) : 1
+1 3 2, 2 (1) : 1
+2 1 1, 1 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 3 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 3 (1) : 1
+3 1 1, 2 (1) : 1
+3 2 1, 3 (1) : 1
+3 2 2, 4 (1) : 1
+3 3 1, 3 (1) : 1
+3 3 2, 4 (1) : 1
+1 1 1, 1 (1) : 1
+3 3 1, 4 (1) : 1
