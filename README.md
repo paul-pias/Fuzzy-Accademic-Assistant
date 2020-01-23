@@ -25,5 +25,6 @@
 ### Our work got selected in the 2018 International Conference on Intelligent System (IS)
 
 ## Paper URL
-[Paper Url] https://ieeexplore.ieee.org/document/8710469
-@author Pias Paul
+[https://ieeexplore.ieee.org/document/8710469](Paper Url)
+
+@ Pias Paul
